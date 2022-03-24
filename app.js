@@ -5,35 +5,35 @@ function askName() {
 }
 
 function askTemp() {
-    var atemp = prompt("What Temperature do you want to convert?");
+    var atemp = prompt("What Temperature do you want to convert? (Only enter Numbers)");
     return atemp;
 }
 
-function CTC() {
+function CTC(a) {
    var ctemp = (((a - 32) * 5) / 9);
-   
+   console.log(ctemp)
    return ctemp;
 }
 
-function FTC() {
+function FTC(a) {
    var ftemp = (((a * 9) / 5) + 32);
    
    return ftemp;
 }
 
 function askConvUnit() {
-    var convUnit = prompt("What do you want to convert your temperature to?");
+    var convUnit = prompt("Do you want to convert from F to C (enter 'c' for this option), ot from C to F (enter 'f' for this option)");
     
     return convUnit;
 }
-
 function conv(a, b, conv, d, e) {
     if (conv == "c") {
-        alert(`Hello ${a}, ${b} in Celsius is ${d}`);
-        console.log(d)
+        var h = CTC(b);
+        alert(`Hello ${a}, ${b} in Celsius is ${h}`);
 
     }else if (conv == "f") {
-        alert(`Hello ${a}, ${b} in Fahrenheit is ${e}`);
+        var h = FTC(b);
+        alert(`Hello ${a}, ${b} in Fahrenheit is ${h}`);
         console.log(e)
     }else {
         alert("No Input");
@@ -41,4 +41,4 @@ function conv(a, b, conv, d, e) {
 
 }
 
-conv(askName(), askTemp(), askConvUnit(), CTC(), FTC()
+conv(askName(), askTemp(), askConvUnit(), CTC(), FTC())
